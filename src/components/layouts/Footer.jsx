@@ -14,10 +14,7 @@ const Footer = () => {
       <div className="flex flex-col grow shrink h-full">
         <div className="px-10 flex flex-row shrink py-14 relative justify-between items-center border-b border-[#DFE4E126]">
           <div className="w-full max-w-[700px]">
-            <h5 className="text-primary-300 text-[28px] font-semibold leading-snug">
-              What does it mean to love? What does it mean to lose? What does it
-              mean to choose yourself, again and again?
-            </h5>
+            <h5 className="text-primary-300 text-[28px] font-semibold leading-snug"></h5>
           </div>
           <div className="md:w-[420px] flex gap-[15px] flex-col shrink">
             <h6 className="text-white font-normal uppercase">
