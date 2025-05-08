@@ -43,7 +43,7 @@ const BookDetails = ({ book }) => {
     );
   };
   return (
-    <section className="my-20">
+    <div className="relative not-first:before:absolute not-first:before:top-0 not-first:before:left-0 not-first:before:w-full not-first:before:h-2 not-first:before:rounded-[100%] not-first:before:bg-neutral-200 not-first:mt-20 not-first:pt-20">
       <div
         className={`flex grow shrink ${
           book.imgRight ? "flex-row-reverse" : "flex-row"
@@ -53,7 +53,7 @@ const BookDetails = ({ book }) => {
           <img src={book.img} className="rounded-[20px] object-cover" alt="" />
         </div>
         <div
-          className={`md:w-[65%] flex flex-col gap-[50px] ${
+          className={`md:w-[65%] flex flex-col gap-6 ${
             book.imgRight ? "pr-16" : "pl-16"
           }`}
         >
@@ -73,7 +73,7 @@ const BookDetails = ({ book }) => {
               <button
                 onClick={onAddToCart}
                 disabled={inCart}
-                className="grow shrink px-5 border-r border-r-[#D1D1D1] flex h-16 items-center justify-center gap-2 uppercase text-base bg-primary text-white hover:bg-sndry transition-all duration-300 ease-in-out not-disabled:cursor-pointer disabled:bg-green-100 disabled:text-green-600"
+                className="grow shrink px-5 border-r border-r-[#D1D1D1] flex h-16 items-center justify-center gap-2 uppercase text-base bg-primary text-white hover:bg-sndry transition-all duration-300 ease-in-out not-disabled:cursor-pointer disabled:bg-primary-50 disabled:text-primary"
               >
                 <span>
                   {inCart ? (
@@ -100,7 +100,7 @@ const BookDetails = ({ book }) => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

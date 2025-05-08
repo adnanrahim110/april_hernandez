@@ -23,10 +23,17 @@ const Cart = () => {
 
   const [couponCode, setCouponCode] = useState("");
   const [couponError, setCouponError] = useState("");
-  const [appliedCoupon, setAppliedCoupon] = useState(null);
-  const [discountAmount, setDiscountAmount] = useState(0);
 
-  const { cart, removeItem, updateQty, clearCart } = useCart();
+  const {
+    cart,
+    removeItem,
+    updateQty,
+    clearCart,
+    applyCoupon,
+    removeCoupon,
+    appliedCoupon,
+    discountAmount,
+  } = useCart();
 
   const subtotal = cart.reduce((sum, i) => sum + i.price * i.quantity, 0);
   const total = subtotal - discountAmount;
@@ -70,7 +77,6 @@ const Cart = () => {
     }
 
     setCouponError("");
-    setAppliedCoupon(code);
 
     let disc = 0;
     if (found.type === "percent") {
@@ -78,7 +84,8 @@ const Cart = () => {
     } else {
       disc = found.amount;
     }
-    setDiscountAmount(disc);
+
+    applyCoupon(code, disc);
 
     toast.success(
       <span>
@@ -90,8 +97,7 @@ const Cart = () => {
   };
 
   const onRemoveDiscount = () => {
-    setAppliedCoupon(null);
-    setDiscountAmount(0);
+    removeCoupon();
     setCouponCode("");
     setCouponError("");
     setHasChanges(true);
@@ -127,7 +133,7 @@ const Cart = () => {
                         ].map((h, idx) => (
                           <th
                             key={idx}
-                            className={`text-white outline-none font-normal text-base align-middle border-l border-[#D1D1D1] bg-[#C497A2] py-[18px] ${
+                            className={`text-white outline-none font-normal text-base align-middle border-l border-[#D1D1D1] bg-sndry-500 py-[18px] ${
                               h === null ? "px-4" : "px-[30px]"
                             }`}
                           >
@@ -352,7 +358,9 @@ const Cart = () => {
                         </tbody>
                       </table>
                       <div className="flex flex-col flex-wrap items-stretch mt-4">
-                        <Button className="mt-5">Proceed to checkout</Button>
+                        <Button href="/checkout" className="mt-5">
+                          Proceed to checkout
+                        </Button>
                       </div>
                     </div>
                     {loading && (

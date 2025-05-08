@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Button = ({
   className,
@@ -36,8 +37,8 @@ const Button = ({
   );
 
   const renderLink = () => (
-    <a
-      href={href}
+    <Link
+      to={href}
       {...props}
       className={`${
         icon ? "flex items-center justify-center gap-3" : ""
@@ -49,7 +50,7 @@ const Button = ({
           className={`text-xl transition-all duration-300 ease-linear ${iconClass}`}
         />
       )}
-    </a>
+    </Link>
   );
 
   return href ? renderLink() : renderButton();

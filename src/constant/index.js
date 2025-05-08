@@ -51,8 +51,9 @@ export const books = [
     amzLink: '#',
     imgRight: false,
     text: [
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi sapiente nam minima facilis doloremque corrupti rerum labore voluptatum velit perferendis officiis nobis reprehenderit ab illum, expedita quas officia, nemo dolorum voluptatem corporis ex. Optio quos ut cumque ex harum sunt numquam natus, nesciunt, tempore officia ducimus sit, id provident soluta debitis. Eos, maiores quae! Deleniti ipsam ipsa necessitatibus quis adipisci voluptates maiores aut id dolore ad. Accusamus sed ipsam velit.",
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi sapiente nam minima facilis doloremque corrupti rerum labore voluptatum velit perferendis officiis nobis reprehenderit ab illum,"
+      `Step into the world of My Heart Expansion, a heartfelt collection that explores the depths of love, longing, and the connections that bring us together. Through honest prose and touching reflections, each page opens up like a gentle conversation with the soul, inviting you to experience the raw emotions that come with loving deeply and healing from heartache. Whether it’s the ache of separation or the joy of newfound love, this book is a reminder that the heart’s ability to feel is endless.`,
+      `<em><b>Feel the heartbeat of every emotion, where every page tells a story of love and healing.</b></em>`,
+      `Written with authenticity and grace, My Heart Expansion is more than just words on a page—it’s a journey that speaks to anyone who has ever loved, lost, and found themselves in the process. Let its verses guide you through moments of vulnerability and strength, offering comfort and inspiration with every turn.`
     ],
   },
   {
@@ -63,8 +64,9 @@ export const books = [
     amzLink: '#',
     imgRight: true,
     text: [
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi sapiente nam minima facilis doloremque corrupti rerum labore voluptatum velit perferendis officiis nobis reprehenderit ab illum, expedita quas officia, nemo dolorum voluptatem corporis ex. Optio quos ut cumque ex harum sunt numquam natus, nesciunt, tempore officia ducimus sit, id provident soluta debitis. Eos, maiores quae! Deleniti ipsam ipsa necessitatibus quis adipisci voluptates maiores aut id dolore ad. Accusamus sed ipsam velit.",
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi sapiente nam minima facilis doloremque corrupti rerum labore voluptatum velit perferendis officiis nobis reprehenderit ab illum,"
+      `Healing and Feeling is your personal guide to exploring the depths of self-healing and spiritual growth. This powerful workbook is designed to help you face hidden wounds, connect with your inner child, and release the energetic blocks that keep you from true peace and happiness. Through practical exercises, reflective journaling, and spiritual teachings, you’ll learn to reframe negative thoughts, understand your shadow self, and discover the healing power of self-compassion. Whether you’re seeking emotional clarity, spiritual growth, or a deeper connection to your true self, this book is your companion on the journey to wholeness.`,
+      `<em><b>“Uncover your shadows, heal your soul, and find the light within.”</b></em>`,
+      `Thoughtfully written with empathy and spiritual insight, Healing and Feeling is more than just a workbook—it’s a healing experience. Explore transformative chapters on vulnerability, forgiveness, chakra balancing, and reclaiming your power. Begin your journey to self-discovery and let the light of healing guide your path forward.`
     ],
   },
 ]

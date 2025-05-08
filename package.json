@@ -10,9 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@headlessui/react": "^2.2.2",
+    "@paypal/react-paypal-js": "^8.8.3",
     "@tailwindcss/vite": "^4.1.4",
     "clsx": "^2.1.1",
+    "country-state-city": "^3.2.1",
     "gsap": "^3.12.7",
     "motion": "^12.9.0",
     "react": "^18.3.1",
@@ -20,12 +21,14 @@
     "react-helmet-async": "^2.0.5",
     "react-icons": "^5.5.0",
     "react-router-dom": "^7.5.0",
+    "react-select": "^5.10.1",
     "react-toastify": "^11.0.5",
     "swiper": "^11.2.6",
     "tailwindcss": "^4.1.4"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
+    "@rollup/plugin-inject": "^5.0.5",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "@vitejs/plugin-react": "^4.3.4",

@@ -1,71 +1,99 @@
 import React, { createContext, useContext, useEffect, useReducer } from "react";
 
-// --- 1. Define actions
 const ADD_ITEM = "ADD_ITEM";
 const REMOVE_ITEM = "REMOVE_ITEM";
 const UPDATE_QTY = "UPDATE_QTY";
 const CLEAR_CART = "CLEAR_CART";
+const APPLY_COUPON = "APPLY_COUPON";
+const REMOVE_COUPON = "REMOVE_COUPON";
 
-// --- 2. Initial state (from localStorage or empty)
-const initialState = JSON.parse(localStorage.getItem("cart")) || [];
+const initialState = JSON.parse(localStorage.getItem("cartState")) || {
+  items: [],
+  appliedCoupon: null,
+  discountAmount: 0,
+};
 
-// --- 3. Reducer
 function cartReducer(state, action) {
   switch (action.type) {
     case ADD_ITEM: {
       const { item, quantity } = action.payload;
-      const exists = state.find((i) => i.id === item.id);
+      const exists = state.items.find((i) => i.id === item.id);
+      let items;
       if (exists) {
-        return state.map((i) =>
+        items = state.items.map((i) =>
           i.id === item.id ? { ...i, quantity: i.quantity + quantity } : i
         );
+      } else {
+        items = [...state.items, { ...item, quantity }];
       }
-      return [...state, { ...item, quantity }];
+      return { ...state, items };
     }
     case REMOVE_ITEM:
-      return state.filter((i) => i.id !== action.payload.id);
+      return {
+        ...state,
+        items: state.items.filter((i) => i.id !== action.payload.id),
+      };
     case UPDATE_QTY:
-      return state.map((i) =>
-        i.id === action.payload.id
-          ? { ...i, quantity: action.payload.quantity }
-          : i
-      );
+      return {
+        ...state,
+        items: state.items.map((i) =>
+          i.id === action.payload.id
+            ? { ...i, quantity: action.payload.quantity }
+            : i
+        ),
+      };
     case CLEAR_CART:
-      return [];
+      return { ...state, items: [], appliedCoupon: null, discountAmount: 0 };
+    case APPLY_COUPON:
+      return {
+        ...state,
+        appliedCoupon: action.payload.code,
+        discountAmount: action.payload.amount,
+      };
+    case REMOVE_COUPON:
+      return { ...state, appliedCoupon: null, discountAmount: 0 };
     default:
       return state;
   }
 }
 
-// --- 4. Context
 const CartContext = createContext();
 
-// --- 5. Provider
 export function CartProvider({ children }) {
-  const [cart, dispatch] = useReducer(cartReducer, initialState);
+  const [state, dispatch] = useReducer(cartReducer, initialState);
 
-  // Persist to localStorage on changes
   useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cart));
-  }, [cart]);
+    localStorage.setItem("cartState", JSON.stringify(state));
+  }, [state]);
 
-  // Action creators
+  // action creators
   const addItem = (item, qty = 1) =>
     dispatch({ type: ADD_ITEM, payload: { item, quantity: qty } });
   const removeItem = (id) => dispatch({ type: REMOVE_ITEM, payload: { id } });
-  const updateQty = (id, quantity) =>
-    dispatch({ type: UPDATE_QTY, payload: { id, quantity } });
+  const updateQty = (id, qty) =>
+    dispatch({ type: UPDATE_QTY, payload: { id, quantity: qty } });
   const clearCart = () => dispatch({ type: CLEAR_CART });
+  const applyCoupon = (code, amount) =>
+    dispatch({ type: APPLY_COUPON, payload: { code, amount } });
+  const removeCoupon = () => dispatch({ type: REMOVE_COUPON });
 
-  // Expose cart + actions
   return (
     <CartContext.Provider
-      value={{ cart, addItem, removeItem, updateQty, clearCart }}
+      value={{
+        cart: state.items,
+        appliedCoupon: state.appliedCoupon,
+        discountAmount: state.discountAmount,
+        addItem,
+        removeItem,
+        updateQty,
+        clearCart,
+        applyCoupon,
+        removeCoupon,
+      }}
     >
       {children}
     </CartContext.Provider>
   );
 }
 
-// --- 6. Hook for easy access
 export const useCart = () => useContext(CartContext);

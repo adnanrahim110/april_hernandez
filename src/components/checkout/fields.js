@@ -1,0 +1,71 @@
+const fields = [
+  {
+    name: "first_name",
+    label: "First Name",
+    placeholder: "Enter your first name",
+    required: true,
+    type: "text",
+    half: true,
+  },
+  {
+    name: "last_name",
+    label: "Last Name",
+    placeholder: "Enter your last name",
+    required: true,
+    type: "text",
+    half: true,
+  },
+  {
+    select: true,
+    name: "country",
+    label: "Country / Region",
+    placeholder: "Choose your country",
+    required: true,
+    dataKey: "countryOptions",
+  },
+  {
+    name: "address_1",
+    label: "Street Address",
+    placeholder: "House number and street name",
+    required: true,
+    type: "text",
+    isDouble: true,
+    double: {
+      name: "address_2",
+      placeholder: "Apartment, suite, unit, etc. (optional)",
+      type: "text",
+      required: false,
+    },
+  },
+  {
+    select: true,
+    name: "state",
+    label: "State / Province",
+    placeholder: "Choose your state / province",
+    required: true,
+    dataKey: "stateOptions",
+  },
+  {
+    name: "zipcode",
+    label: "Postcode / zip",
+    placeholder: "Enter your postcode",
+    required: true,
+    type: "text",
+  },
+  {
+    name: "phone",
+    label: "Phone Number",
+    placeholder: "Enter your phone number",
+    required: true,
+    type: "tel",
+  },
+  {
+    name: "email",
+    label: "Email Address",
+    placeholder: "Enter your email address",
+    required: true,
+    type: "email",
+  },
+];
+
+export default fields;

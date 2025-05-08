@@ -10,7 +10,7 @@ export default function OpenAtTop() {
       isFirstRender.current = false;
       return;
     }
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: "auto" });
   }, [pathname]);
 
   return null;

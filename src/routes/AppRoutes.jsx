@@ -6,6 +6,7 @@ import Books from "../pages/Books";
 import Cards from "../pages/Cards";
 import Cart from "../pages/Cart";
 import Categories from "../pages/Categories";
+import Checkout from "../pages/Checkout";
 import Home from "../pages/Home";
 import NotFound from "../pages/NotFound";
 
@@ -17,6 +18,7 @@ const AppRoutes = () => {
       <Route path="/books" element={<Books />} />
       <Route path="/cards" element={<Cards />} />
       <Route path="/cart" element={<Cart />} />
+      <Route path="/checkout" element={<Checkout />} />
       <Route path="/blogs" element={<Blogs />} />
       <Route path="/blogs/:blogName" element={<Blog />} />
       <Route path="/blogs/category/:category" element={<Categories />} />

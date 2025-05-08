@@ -32,6 +32,7 @@ export { default as home_1_8 } from './images/home-1-8.webp';
 export { default as home_1_9 } from './images/home-1-9.webp';
 export { default as home_bg_c } from './images/home-bg-c.png';
 export { default as home_bg } from './images/home-bg.png';
+export { default as medi } from './images/medi.png';
 export { default as reading } from './images/reading.png';
 export { default as reiki } from './images/reiki.png';
 export { default as reiki_1 } from './images/reiki_1.png';
