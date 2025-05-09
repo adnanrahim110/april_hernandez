@@ -1,0 +1,38 @@
+[
+  {
+    "id": "8d79a339-73b3-421e-9b65-04ce03ebe1f5",
+    "formData": {
+      "first_name": "Justine",
+      "last_name": "Stevens",
+      "country": "US",
+      "address_1": "600 Nobel Boulevard",
+      "address_2": "Nihil aute officiis ",
+      "city": "",
+      "state": "CA",
+      "zipcode": "58003",
+      "email": "buxefype@mailinator.com",
+      "phone": "+1 (459) 122-4259",
+      "order_notes": "Quibusdam dolor sint"
+    },
+    "order_details": [
+      {
+        "id": "book-001",
+        "product_title": "My Heart Expansion",
+        "product_price": 14.99,
+        "quantity": 1,
+        "amazon_link": "#",
+        "product_img": "/src/assets/images/book1.png"
+      }
+    ],
+    "subtotal": 14.99,
+    "coupon_code": "SAVE10",
+    "discount": "10%",
+    "total": 13.491,
+    "createdAt": "2025-05-09T17:17:37.630Z",
+    "status": "COMPLETED",
+    "paymentMethod": "PAYPAL",
+    "transactionId": "43U824941Y340623M",
+    "paidAt": "2025-05-09T17:18:06.654Z",
+    "paypalOrderId": "39B267048N928491D"
+  }
+]
