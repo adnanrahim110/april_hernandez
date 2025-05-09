@@ -27,7 +27,7 @@ const BookDetails = ({ book }) => {
           </button>
           <button
             onClick={() => {
-              navigate("/");
+              navigate("/checkout");
               toast.dismiss();
             }}
             className="px-3 py-2 bg-sndry border text-xs uppercase border-sndry text-white hover:bg-transparent hover:text-sndry transition-all duration-300 ease-in-out"
@@ -37,7 +37,7 @@ const BookDetails = ({ book }) => {
         </div>
       </div>,
       {
-        autoClose: 500,
+        autoClose: 1500,
         closeOnClick: false,
       }
     );
