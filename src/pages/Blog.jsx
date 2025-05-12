@@ -83,9 +83,9 @@ const Blog = () => {
       <Helmet>
         <title>{post.title} - April P. Hernandez</title>
       </Helmet>
-      <section className="mb-[130px] px-[30px] flex flex-col w-full pt-24">
+      <section className="mb-20 lg:mb-[130px] px-0 lg:px-[30px] flex flex-col w-full pt-24">
         <div
-          className="rounded-[20px] z-[revert] text-white relative overflow-hidden w-full flex flex-col items-center text-center justify-center bg-center bg-cover bg-no-repeat min-h-[600px] gap-[30px] shrink before:absolute before:w-full before:h-full before:bg-black/50 before:z-[revert] before:rounded-[20px] *:z-[revert] *:relative"
+          className="lg:rounded-[20px] z-[revert] text-white relative overflow-hidden w-full flex flex-col items-center text-center justify-center bg-center bg-cover bg-no-repeat min-h-[600px] gap-[30px] shrink before:absolute before:w-full before:h-full before:bg-black/50 before:z-[revert] lg:before:rounded-[20px] *:z-[revert] *:relative"
           style={{ backgroundImage: `url(${post.img})` }}
         >
           <div>
@@ -118,8 +118,8 @@ const Blog = () => {
         </div>
       </section>
       <section className="mb-[120px]">
-        <div className="flex grow shrink flex-row gap-20 max-w-7xl mx-auto h-full w-full">
-          <div className="md:w-[22%] gap-2.5 flex-col flex shrink mb-20 relative">
+        <div className="flex grow shrink flex-col-reverse lg:flex-row gap-20 max-w-7xl mx-auto h-full w-full">
+          <div className="w-full md:w-[22%] gap-2.5 flex-col flex shrink mb-20 relative">
             <div className="sticky top-9 flex flex-col gap-2.5">
               <div className="bg-[#F5F3EF] rounded-[20px] p-5 transition-all duration-300 ease-in-out">
                 <Link to="/author" className="mb-5 block w-full">
@@ -133,7 +133,7 @@ const Blog = () => {
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                     Libero pariatur provident aspernatur iure alias illo.
                   </p>
-                  <Button btn2 href="/author">
+                  <Button btn2 href="/author" className="inline-flex">
                     Open profile
                   </Button>
                 </div>
@@ -180,7 +180,7 @@ const Blog = () => {
                 ))}
               </div>
             </div>
-            <div className="bg-[#F5F3EF] w-full md:max-w-[820px] flex flex-col items-stretch gap-[15px] shrink grow-0 py-20 px-[125px] relative rounded-[20px]">
+            <div className="bg-[#F5F3EF] w-full md:max-w-[820px] flex flex-col items-stretch gap-[15px] shrink grow-0 py-[30px] lg:py-20 px-5 lg:px-[125px] relative rounded-[20px]">
               <h3 className="text-sndry">Get in Touch with Me</h3>
               <div>
                 <p>
@@ -190,8 +190,8 @@ const Blog = () => {
               </div>
               <div>
                 <form className="blogForm">
-                  <div className="flex mb-[15px] flex-wrap -mx-2.5">
-                    <div className="px-2.5 grow shrink basis-0">
+                  <div className="md:flex mb-[15px] flex-wrap -mx-2.5">
+                    <div className="px-2.5 grow shrink basis-0 max-md:mb-5">
                       <label htmlFor="name">Name</label>
                       <input type="text" name="name" />
                     </div>
@@ -240,23 +240,23 @@ const Blog = () => {
         <div className="flex flex-col grow shrink gap-[120px] h-full mx-auto">
           <div className="w-full self-center max-w-[820px]">
             <div className="w-full border border-[#D1D1D1] rounded-[20px]">
-              <div className="text-[#D1D1D1] flex justify-between w-full">
-                <div className="transition-all duration-300 p-[30px] flex items-start justify-start bg-transparent w-1/2 relative  overflow-hidden">
+              <div className="text-[#D1D1D1] flex flex-col md:flex-row justify-between w-full">
+                <div className="transition-all duration-300 p-[15px] lg:p-[30px] flex items-start justify-start bg-transparent md:w-1/2 relative  overflow-hidden">
                   <Link
                     to={prevPost.link}
                     className="flex items-center w-full h-fit justify-start transition-all duration-300 group"
                   >
                     <img
                       src={prevPost.img}
-                      className="rounded-[20px] self-center h-[140px] w-[140px] object-cover object-center mr-5"
+                      className="rounded-[20px] self-center h-20 md:h-[140px] w-20 md:w-[140px] object-cover object-center mr-5"
                       alt=""
                     />
                     <span className="flex flex-col text-left">
-                      <span className="text-base text-[#9E9E9E]">
+                      <span className="text-sm max-md:leading-[1.5em] md:text-base text-[#9E9E9E]">
                         Previous Post
                       </span>
                       <span className="mt-2.5 overflow-visible">
-                        <span className="transition-all duration-300 ease-in-out text-sndry group-hover:text-primary leading-[1.3em]">
+                        <span className="max-md:text-sm font-heading transition-all duration-300 ease-in-out text-sndry-600 group-hover:text-primary leading-[1.3em]">
                           {prevPost.title}
                         </span>
                       </span>
@@ -264,26 +264,26 @@ const Blog = () => {
                   </Link>
                 </div>
                 <div className="flex text-center">
-                  <div className="border border-[#D1D1D1] h-full mx-5"></div>
+                  <div className="border-t border-[#D1D1D1] h-full mx-5 w-full"></div>
                 </div>
-                <div className="transition-all duration-300 p-[30px] items-right justify-start flex bg-transparent w-1/2 relative  overflow-hidden">
+                <div className="transition-all duration-300 p-[15px] lg:p-[30px] items-right justify-start flex bg-transparent md:w-1/2 relative  overflow-hidden">
                   <Link
                     to={nextPost.link}
                     className="flex items-center w-full h-fit justify-start transition-all duration-300 group"
                   >
                     <span className="flex flex-col text-right">
-                      <span className="text-base text-[#9E9E9E]">
+                      <span className="text-sm max-md:leading-[1.5em] md:text-base text-[#9E9E9E]">
                         Next Post
                       </span>
                       <span className="mt-2.5">
-                        <span className="transition-all duration-300 ease-in-out text-sndry group-hover:text-primary leading-[1.3em]">
+                        <span className="max-md:text-sm font-heading transition-all duration-300 ease-in-out text-sndry-600 group-hover:text-primary leading-[1.3em]">
                           {nextPost.title}
                         </span>
                       </span>
                     </span>
                     <img
                       src={nextPost.img}
-                      className="rounded-[20px] self-center h-[140px] w-[140px] object-cover object-center ml-5"
+                      className="rounded-[20px] self-center h-20 md:h-[140px] w-20 md:w-[140px] object-cover object-center ml-5"
                       alt=""
                     />
                   </Link>
@@ -297,7 +297,21 @@ const Blog = () => {
         <div className="flex flex-col grow shrink gap-[50px] w-full mx-auto h-full">
           <h3 className="text-center text-sndry">Related Posts</h3>
           <div className="relative w-full">
-            <Swiper slidesPerView={3} spaceBetween={30}>
+            <Swiper
+              slidesPerView={3}
+              spaceBetween={30}
+              breakpoints={{
+                0: {
+                  slidesPerView: 1,
+                },
+                768: {
+                  slidesPerView: 2,
+                },
+                1024: {
+                  slidesPerView: 3,
+                },
+              }}
+            >
               {relatedPosts.map((post, idx) => (
                 <SwiperSlide key={idx}>
                   <Card post={post} />

@@ -8,9 +8,9 @@ const CouponCode = () => {
   const couponDef = appliedCoupon ? coupons[appliedCoupon] : null;
 
   return (
-    <div className="border border-[#D1D1D1] p-[30px] mt-[50px]">
+    <div className="border border-[#D1D1D1] p-5 lg:p-[30px] mt-[50px]">
       {appliedCoupon && couponDef ? (
-        <p className="mb-0 inline-flex items-center gap-1.5">
+        <p className="mb-0 inline-flex items-center gap-1.5 max-md:text-sm">
           <span className="inline-flex items-center text-primary">
             <span> Coupon</span>
             <strong className="text-primary bg-primary-50 px-1 mx-1 border border-primary-300">

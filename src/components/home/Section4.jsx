@@ -22,7 +22,7 @@ const Section4 = () => {
       className="bg-cover bg-[top_center] bg-no-repeat"
       style={{ backgroundImage: `url(${banners_home_3})` }}
     >
-      <div className="flex flex-wrap basis-auto relative grow gap-y-48 shrink items-center justify-start py-[150px]">
+      <div className="flex flex-wrap basis-auto relative grow gap-y-48 shrink items-center justify-start py-20 lg:py-[150px]">
         <motion.div
           style={{ rotate }}
           className="absolute z-[1] left-[calc(50%_-_85px)] top-[calc(50%_-_85px)]"

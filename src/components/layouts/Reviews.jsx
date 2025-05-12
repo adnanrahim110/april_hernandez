@@ -1,8 +1,7 @@
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { FaPlay, FaStar } from "react-icons/fa6";
 import { reviews } from "../../constant";
-import Button from "../ui/Button";
 import SecHeader from "../ui/SecHeader";
 
 const Reviews = ({ dark = false, title, text }) => {
@@ -25,7 +24,7 @@ const Reviews = ({ dark = false, title, text }) => {
     >
       <div className="flex flex-col grow shrink items-center gap-5 h-full mx-auto w-full">
         <SecHeader title={title} description={text} />
-        <div className="grid grid-cols-3 grid-rows-1 gap-10 content-[start] grid-flow-row justify-start mt-[50px] relative">
+        <div className="grid lg:grid-cols-3 grid-rows-1 gap-10 content-[start] grid-flow-row justify-start mt-[50px] relative">
           {[...Array(3)].map((_, colIdx) => {
             const y = colIdx === 1 ? yMiddle : yOuter;
             const chunk = reviews.slice(colIdx * 3, colIdx * 3 + 3);

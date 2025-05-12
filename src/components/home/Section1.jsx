@@ -65,7 +65,7 @@ const Section1 = () => {
             variants={fadeInUp()}
             className="text-center"
           >
-            <h3 className="text-[28px] text-primary leading-[1.45em] -tracking-[1px] mb-10">
+            <h3 className="text-xl md:text-[28px] text-primary leading-[1.45em] -tracking-[1px] mb-10">
               Healing and Feeling and My Heart Expansions are soul-deep journeys
               for anyone moving through the messiness of emotions. With raw
               reflections, spiritual insights, and heartfelt confessions, these
@@ -73,7 +73,7 @@ const Section1 = () => {
               self-love. They're not just reads—they're rituals of
               transformation.
             </h3>
-            <p className="text-primary font-heading text-sm uppercase">
+            <p className="max-md:text-xs text-primary font-heading text-sm uppercase">
               <b>April</b> is a healer who blends therapy, spirit, and soul in
               her work
             </p>

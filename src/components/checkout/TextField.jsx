@@ -4,7 +4,7 @@ const TextField = ({ formData, field, errors, onChange }) => {
   return (
     <p
       className={`-mx-[5px] px-[5px] mb-8 relative ${
-        field.half ? "w-1/2" : "w-full"
+        field.half ? "w-full lg:w-1/2" : "w-full"
       }`}
     >
       <label htmlFor={field.name}>

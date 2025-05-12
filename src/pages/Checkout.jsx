@@ -187,9 +187,9 @@ const Checkout = () => {
       <Hero hero2 title="Checkout" />
       <section className="mb-[150px]">
         <form onSubmit={handleSubmit}>
-          <div className="grid grid-cols-[50%_auto]  gap-[50px]">
+          <div className="grid lg:grid-cols-[50%_auto]  gap-[50px]">
             <div>
-              <div className="w-auto bg-white border border-[#D1D1D1] p-[30px] overflow-hidden">
+              <div className="w-auto bg-white border border-[#D1D1D1] px-5 py-10 lg:p-[30px] overflow-hidden">
                 <h3 className="mb-10">Billing Details</h3>
                 <div className="flex flex-wrap justify-between items-center *:relative">
                   {fields.map((field, idx) => {
@@ -216,8 +216,8 @@ const Checkout = () => {
                 </div>
               </div>
               <div>
-                <div className="mt-[50px] p-[30px] bg-white border border-[#D1D1D1] overflow-hidden">
-                  <p className="-mx-[5px] px-[5px] mb-8 w-full">
+                <div className="mt-[50px] p-5 lg:p-[30px] bg-white border border-[#D1D1D1] overflow-hidden">
+                  <p className="-mx-[5px] px-[5px] mb-0 w-full">
                     <label htmlFor="order_notes">Order Notes (optional)</label>
                     <span className="mb-[3px]">
                       <textarea
@@ -236,7 +236,7 @@ const Checkout = () => {
             <div>
               <OrderSummary />
               <CouponCode />
-              <div className="border border-[#D1D1D1] p-[30px] mt-[50px]">
+              <div className="border border-[#D1D1D1] p-5 lg:p-[30px] mt-[50px]">
                 {loading ? (
                   <LoadingBtn />
                 ) : (

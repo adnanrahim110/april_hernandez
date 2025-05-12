@@ -38,13 +38,15 @@ const ImgRounded = ({
   return (
     <div
       ref={containerRef}
-      className={`flex flex-wrap ${
-        reverse ? "flex-row-reverse" : "flex-row"
+      className={`flex gap-y-10 flex-wrap ${
+        reverse
+          ? "lg:flex-row-reverse flex-col-reverse"
+          : "flex-col lg:flex-row"
       } basis-auto grow relative shrink items-center justify-start`}
     >
       <motion.div
-        className={`${imgw} flex flex-row shrink relative ${
-          reverse ? "pl-[4%]" : "pr-[4%]"
+        className={`${imgw} flex flex-col lg:flex-row shrink relative ${
+          reverse ? "lg:pl-[4%]" : "lg:pr-[4%]"
         } items-start flex-wrap`}
         style={{ y }}
       >
@@ -53,14 +55,14 @@ const ImgRounded = ({
             src={bgImg}
             className={`w-full h-full shadow-[0_0_20px_10px_rgba(0,0,0,0.1)] ${
               reverse
-                ? "rounded-[20px_20px_20px_250px]"
-                : "rounded-[20px_250px_20px_20px]"
+                ? "rounded-[20px_20px_20px_100px] lg:rounded-[20px_20px_20px_250px]"
+                : "rounded-[20px_100px_20px_20px] lg:rounded-[20px_250px_20px_20px]"
             }`}
           />
         </div>
         {bar && (
-          <div className="max-w-[65%]">
-            <p className="text-sm mt-4">{bar}</p>
+          <div className="w-full lg:max-w-[65%]">
+            <p className="text-xs md:text-sm mt-4">{bar}</p>
           </div>
         )}
       </motion.div>
@@ -70,7 +72,7 @@ const ImgRounded = ({
         viewport={{ once: true }}
         variants={fadeInUp()}
         className={`w-full ${
-          reverse ? "pr-[4%]" : "pl-[4%]"
+          reverse ? "lg:pr-[4%]" : "lg:pl-[4%]"
         } ${w} flex flex-col gap-[30px] justify-center`}
       >
         {subtitle && (

@@ -11,7 +11,9 @@ const AboutSection = ({ title, imgLeft, imgRight, text, className }) => {
     <section className={`${className ? className : "mb-10"}`}>
       <div
         className={`flex grow shrink ${
-          imgLeft ? "flex-row" : "flex-row-reverse"
+          imgLeft
+            ? "flex-col-reverse lg:flex-row"
+            : "flex-col-reverse lg:flex-row-reverse"
         } h-full mx-auto w-full`}
       >
         <div className="md:w-[50%] flex shrink">
@@ -23,7 +25,7 @@ const AboutSection = ({ title, imgLeft, imgRight, text, className }) => {
         </div>
         <div
           className={`md:w-[50%] flex flex-col gap-[30px] ${
-            imgLeft ? "pl-12" : "pr-24"
+            imgLeft ? "lg:pl-12" : "lg:pr-24"
           } shrink justify-center`}
         >
           <h2>{title}</h2>

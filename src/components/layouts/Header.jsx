@@ -1,10 +1,12 @@
-import { motion } from "framer-motion";
-import React, { useEffect, useState } from "react";
+import { motion } from "motion/react";
+import { useEffect, useState } from "react";
 import { IoCartOutline } from "react-icons/io5";
 import { Link, useLocation } from "react-router-dom";
+import { logo_h } from "../../assets";
 import { navigation } from "../../constant";
 import { useCart } from "../../context/CartContext";
 import Button from "../ui/Button";
+import "./header.css";
 
 const Header = ({ setIsSidebar }) => {
   const [lastY, setLastY] = useState(0);
@@ -30,6 +32,13 @@ const Header = ({ setIsSidebar }) => {
   const { cart } = useCart();
   const itemCount = cart.length;
 
+  const isActive = (href) => {
+    if (href === "/blogs" && location.pathname.startsWith("/blogs")) {
+      return true;
+    }
+    return location.pathname === href;
+  };
+
   return (
     <motion.header
       initial={false}
@@ -40,12 +49,18 @@ const Header = ({ setIsSidebar }) => {
         top-0 left-0 right-0 z-50 bg-white
       `}
     >
-      <nav className={`px-[30px] ${showHeader ? "py-0.5" : "py-2.5"} relative`}>
+      <nav
+        className={`px-4 lg:px-[30px] ${
+          showHeader ? "py-3" : "py-2.5"
+        } relative`}
+      >
         <div className="flex items-center justify-between font-rare">
           <div>
-            <h1 className="leading-none my-2 text-primary font-bold text-6xl">
-              april
-            </h1>
+            <img
+              src={logo_h}
+              alt="April P. Hernandez"
+              className="max-w-3xs md:max-w-2xs"
+            />
           </div>
           <ul className="hidden lg:flex items-center justify-center flex-wrap -mx-[calc(50px_/_2)]">
             {navigation.map((item, idx) => (
@@ -61,7 +76,7 @@ const Header = ({ setIsSidebar }) => {
                   <span className="flex justify-center items-center overflow-hidden">
                     <span
                       className={`relative ${
-                        location.pathname === item.href
+                        isActive(item.href)
                           ? "text-primary before:left-px"
                           : "text-black group-hover:text-primary group-hover:before:left-0"
                       } transition-all duration-300 ease-in-out before:absolute before:w-[calc(100%_-_3px)] before:h-0.5 before:bottom-0 before:bg-primary before:-left-full before:transition-all before:duration-300 before:ease-in-out`}
@@ -73,7 +88,7 @@ const Header = ({ setIsSidebar }) => {
               </li>
             ))}
           </ul>
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="flex items-center gap-3">
             <Link
               to={"/cart"}
               className={`relative mt-1 transition-all duration-300 ease-in-out rounded-md p-1 border group ${
@@ -95,48 +110,23 @@ const Header = ({ setIsSidebar }) => {
                 <IoCartOutline />
               </span>
             </Link>
-            <Button href="/books">Buy Now</Button>
-          </div>
-
-          <div className="inline-flex lg:hidden items-center shrink-0">
-            <button
-              className="inline-flex items-center justify-center w-[26px] h-[34px] gap-1.5 text-current"
-              onClick={() => setIsSidebar(true)}
-            >
-              <div className="relative inline-flex items-center justify-center text-[22px]">
-                <svg
-                  className="w-[22px] h-[22px] transition-[transform_0.45s_cubic-bezier(0.42,0,0.58,1)]"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  width="24"
-                  height="24"
-                  color="currentColor"
-                  fill="none"
-                >
-                  <path
-                    d="M4 5L20 5"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  ></path>
-                  <path
-                    d="M4 12L20 12"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  ></path>
-                  <path
-                    d="M4 19L20 19"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  ></path>
-                </svg>
-              </div>
-            </button>
+            <Button href="/books" className="hidden lg:inline-flex">
+              Buy Now
+            </Button>
+            <div className="inline-flex lg:hidden items-center shrink-0">
+              <motion.button
+                className="inline-flex items-center justify-center gap-1.5 text-current menu-button"
+                onClick={() => setIsSidebar(true)}
+              >
+                <div className="relative inline-flex items-center justify-center w-8 pt-1">
+                  <span className="flex flex-col gap-1 w-full h-full overflow-hidden">
+                    <span className="w-full h-0.5 bg-primary line"></span>
+                    <span className="w-full h-0.5 bg-primary line"></span>
+                    <span className="w-3/4 h-0.5 bg-primary line"></span>
+                  </span>
+                </div>
+              </motion.button>
+            </div>
           </div>
         </div>
       </nav>

@@ -164,6 +164,20 @@
     h1 {
       font-size: 40px;
     }
+
+    h2 {
+      font-size: 34px;
+    }
+
+    h3 {
+      font-size: 28px;
+    }
+  }
+
+  @media (width < 1024px) {
+    section {
+      padding-inline: 20px;
+    }
   }
 
   img {

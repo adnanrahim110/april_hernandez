@@ -36,12 +36,12 @@ const Section2 = () => {
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeInUp({ delay: 0.15 })}
-            className="text-[66px] tracking-[-2px] text-primary"
+            className="text-[40px] max-md:leading-[1.1em] max-md:-tracking-[2px] md:text-[66px] tracking-[-2px] text-primary"
           >
             Your Path to Healing
           </motion.h3>
         </div>
-        <div className="flex flex-row grow-0 shrink gap-10 justify-center items-stretch">
+        <div className="flex flex-col lg:flex-row grow-0 shrink gap-10 justify-center items-stretch">
           {[
             {
               title: "Therapy",

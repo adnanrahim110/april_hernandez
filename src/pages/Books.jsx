@@ -1,4 +1,3 @@
-import React from "react";
 import { Helmet } from "react-helmet-async";
 import Contact from "../components/layouts/Contact";
 import Hero from "../components/layouts/Hero";

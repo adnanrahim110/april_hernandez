@@ -1,0 +1,38 @@
+@keyframes slideOutIn {
+  0% {
+    transform: translateX(0);
+  }
+
+  33% {
+    transform: translateX(100%);
+  }
+
+  33.01% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.menu-button .line {
+  display: block;
+  transition: transform 0.8s ease-in-out;
+}
+
+.menu-button:hover .line {
+  animation: slideOutIn 0.8s ease-in-out both;
+}
+
+.menu-button:hover .line:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.menu-button:hover .line:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.menu-button:hover .line:nth-child(3) {
+  animation-delay: 0.3s;
+}

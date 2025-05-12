@@ -1,7 +1,7 @@
 import React from "react";
 import { LuSend } from "react-icons/lu";
 import { Link } from "react-router-dom";
-import { banners_footer_bg, banners_nl } from "../../assets";
+import { banners_footer_bg, banners_nl, logo_w } from "../../assets";
 import { navigation, socials } from "../../constant";
 import Button from "../ui/Button";
 
@@ -13,7 +13,7 @@ const Footer = () => {
     >
       <div className="flex flex-col grow shrink h-full">
         <div
-          className="px-10 flex flex-row shrink py-14 relative justify-between items-center bg-cover bg-center bg-no-repeat"
+          className="px-5 lg:px-10 flex flex-col gap-y-10 lg:flex-row shrink pt-[60px] pb-[30px] lg:py-14 relative justify-between items-center bg-cover bg-center bg-no-repeat max-lg: text-center"
           style={{
             backgroundImage: `linear-gradient(0deg, rgba(255,255,255, 0.5), rgba(255,255,255, 0.5)),url(${banners_nl})`,
           }}
@@ -26,16 +26,16 @@ const Footer = () => {
               To love fiercely, lose deeply, and choose yourself—always.
             </p>
           </div>
-          <div className="md:w-[420px] flex gap-[15px] flex-col shrink">
+          <div className="w-full md:w-[420px] flex gap-[15px] flex-col shrink">
             <h6 className="text-black font-normal uppercase">
               Sign up to Newsletter
             </h6>
             <div>
               <form>
                 <div className="flex flex-wrap -mx-[5px]">
-                  <div className="px-[5px]">
-                    <div className="flex flex-row items-center flex-wrap">
-                      <div className="px-[5px] mb-2.5 w-[calc(100%_-_150px_-_10px)]">
+                  <div className="px-[5px] w-full">
+                    <div className="flex flex-col lg:flex-row items-center flex-wrap">
+                      <div className="px-[5px] mb-2.5 w-full lg:w-[calc(100%_-_150px_-_10px)]">
                         <input
                           type="email"
                           name="email"
@@ -43,11 +43,11 @@ const Footer = () => {
                           className="focus:shadow-[0_0_8px_4px_rgba(0,0,0,0.1)]"
                         />
                       </div>
-                      <div className="px-[5px] mb-2.5 w-[calc(150px_+_10px)]">
+                      <div className="px-[5px] mb-2.5 w-full lg:w-[calc(150px_+_10px)]">
                         <Button
                           icon={LuSend}
                           iconClass="text-base! group-hover:rotate-45 transition-all duration-300 ease-in-out"
-                          className="bg-primary text-white hover:bg-primary-900 h-full w-full py-3.5 px-0 group"
+                          className="max-lg:w-full inline-flex bg-primary text-white hover:bg-primary-900 h-full w-full py-3.5 px-0 group"
                         >
                           sign up
                         </Button>
@@ -59,11 +59,15 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="px-10 py-10 flex flex-col flex-nowrap shrink bg-black/45">
-          <div className="flex items-stretch self-auto grow shrink justify-between flex-row gap-[60px] h-full">
+        <div className="px-5 lg:px-10 pt-10 pb-5 flex flex-col flex-nowrap shrink bg-black/45">
+          <div className="flex flex-col items-center max-lg:text-center lg:items-stretch self-auto grow shrink justify-between lg:flex-row gap-[60px] h-full">
             <div className="md:w-3/12">
               <div className="flex flex-col gap-[30px]">
-                <h2 className="font-bold text-white">April</h2>
+                <img
+                  src={logo_w}
+                  alt="April P. Hernandez"
+                  className="max-h-36 h-full w-auto object-contain"
+                />
               </div>
             </div>
             <div className="md:w-6/12">
@@ -111,7 +115,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="px-10 w-full border-t border-[#DFE4E126] py-[30px] bg-black/55">
-          <p className="mb-0 text-neutral-400 text-center text-base">
+          <p className="mb-0 text-neutral-400 text-center text-sm lg:text-base">
             &copy; {new Date().getFullYear()} -{" "}
             <Link
               to="/"

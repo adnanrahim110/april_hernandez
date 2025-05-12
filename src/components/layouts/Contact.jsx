@@ -92,20 +92,20 @@ const Contact = ({ form2 = false }) => {
   return (
     <section className={`px-0 ${form2 ? "my-[150px]" : ""}`}>
       <div
-        className={`flex grow shrink w-full mx-auto ${
-          form2 ? "gap-5 max-w-[940px]" : ""
+        className={`flex flex-col-reverse lg:flex-row grow shrink w-full mx-auto ${
+          form2 ? "gap-5 max-lg:px-5 lg:max-w-[940px]" : ""
         }`}
       >
         {!form2 && (
           <div
-            className="flex bg-cover bg-center bg-no-repeat md:w-[70%] flex-col p-[30px] relative gap-10"
+            className="flex bg-cover bg-center bg-no-repeat max-md:min-h-[340px] max-[1180px]:min-h-[540px] md:w-[70%] flex-col p-[30px] relative gap-10"
             style={{ backgroundImage: `url(${home_1_15})` }}
           />
         )}
         <div
           className={`${
             form2
-              ? "border border-[#D1D1D1] bg-neutral-50/50 rounded-[30px] px-20 flex-col"
+              ? "border border-[#D1D1D1] bg-neutral-50/50 rounded-[30px] px-5 lg:px-20 flex-col"
               : "bg-primary-800 px-10"
           } shrink flex relative w-full`}
         >
@@ -143,7 +143,6 @@ const Contact = ({ form2 = false }) => {
               }`}
               onSubmit={handleSubmit}
             >
-              {/* Name */}
               <div className="md:flex md:flex-wrap md:-mx[2.5px]">
                 <div className="grow shrink basis-0 px-[2.5px] relative">
                   <input
@@ -162,9 +161,8 @@ const Contact = ({ form2 = false }) => {
                 </div>
               </div>
 
-              {/* Email & Phone */}
               <div className="md:flex md:flex-wrap md:-mx[2.5px]">
-                <div className="grow shrink basis-0 px-[2.5px] relative">
+                <div className="grow shrink basis-0 px-[2.5px] relative max-md:mb-[15px]">
                   <input
                     type="email"
                     name="email"
@@ -196,7 +194,6 @@ const Contact = ({ form2 = false }) => {
                 </div>
               </div>
 
-              {/* Treatment */}
               <div className="md:flex md:flex-wrap md:-mx[2.5px]">
                 <div className="grow shrink basis-0 px-[2.5px] relative">
                   <div className="sw">
@@ -227,9 +224,8 @@ const Contact = ({ form2 = false }) => {
                 </div>
               </div>
 
-              {/* Date */}
               <div className="md:flex md:flex-wrap md:-mx[2.5px]">
-                <div className="grow shrink basis-0 px-[2.5px] relative">
+                <div className="grow shrink basis-0 px-[2.5px] relative max-md:mb-[15px]">
                   <input
                     type="date"
                     name="date"
@@ -246,7 +242,7 @@ const Contact = ({ form2 = false }) => {
 
                 <div className="grow shrink basis-0 px-[2.5px] relative">
                   <div className="md:flex md:flex-wrap md:-mx[2.5px]">
-                    <div className="grow shrink basis-0 px-[2.5px]">
+                    <div className="grow shrink basis-0 px-[2.5px] max-md:mb-[15px]">
                       <div className="sw">
                         <select
                           name="time_hour"

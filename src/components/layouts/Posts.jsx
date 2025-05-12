@@ -18,7 +18,7 @@ const Posts = () => {
     (a, b) => new Date(b.date) - new Date(a.date)
   );
   return (
-    <section className="mb-[150px] items-center p-0 gap-2.5">
+    <section className="mb-[150px] items-center px-5 lg:p-0 gap-2.5">
       <SecHeader
         color
         subtitle="Articles and tips by April"
@@ -32,6 +32,20 @@ const Posts = () => {
           slidesPerView={4}
           centeredSlides={true}
           spaceBetween={40}
+          breakpoints={{
+            0: {
+              slidesPerView: 1,
+            },
+            768: {
+              slidesPerView: 2,
+            },
+            1024: {
+              slidesPerView: 3,
+            },
+            1280: {
+              slidesPerView: 4,
+            },
+          }}
           onSwiper={setSwiperInstance}
         >
           {sortedPosts.map((post, idx) => (

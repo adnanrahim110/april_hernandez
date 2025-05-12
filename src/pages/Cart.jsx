@@ -118,10 +118,10 @@ const Cart = () => {
         <div className="flex grow shrink flex-col w-full h-full mx-auto">
           {cart.length > 0 ? (
             <div>
-              <div className="grid grid-cols-[60%_auto] items-stretch gap-[50px]">
+              <div className="grid grid-cols-1 lg:grid-cols-[60%_auto] items-stretch gap-[50px]">
                 <div>
-                  <table>
-                    <thead>
+                  <table className="wrap-normal break-normal border-separate border-spacing-0 w-full">
+                    <thead className="max-md:hidden">
                       <tr>
                         {[
                           null,
@@ -146,9 +146,9 @@ const Cart = () => {
                       {cart.map((item) => (
                         <tr
                           key={item.id}
-                          className="*:border-[#D1D1D1] *:border-b *:border-l *:text-[#40304B] *:bg-white *:px-[30px] *:py-[18px] *:align-middle"
+                          className="*:border-[#D1D1D1] *:border-x lg:*:border-b lg:*:border-l *:text-[#40304B] *:bg-white *:px-[30px] lg:*:py-[18px] *:pt-9 *:pb-[18px] *:align-middle max-md:block"
                         >
-                          <td className="px-2.5!">
+                          <td className="max-md:flex items-center justify-between lg:px-2.5! max-lg:border-y max-lg:border-b-[#d3d3d3]">
                             <div className="relative inline-block group">
                               <button
                                 onClick={() => {
@@ -158,7 +158,7 @@ const Cart = () => {
                                     { autoClose: 3000 }
                                   );
                                 }}
-                                className="text-base text-center -indent-[9999px] text-sndry block w-4 h-4 mx-auto transition-colors duration-200 ease-in-out hover:text-red-500"
+                                className="text-2xl lg:text-base text-center -indent-[9999px] text-sndry-600 block w-4 h-4 mx-auto transition-colors duration-200 ease-in-out hover:text-red-500"
                               >
                                 <RxCross2 />
                               </button>
@@ -169,22 +169,31 @@ const Cart = () => {
                                 </div>
                               </div>
                             </div>
+                            <span className="text-sndry-500 lg:hidden">
+                              Remove item
+                            </span>
                           </td>
-                          <td className="p-2!">
+                          <td className="max-md:hidden p-2!">
                             <img
                               src={item.img}
                               className="w-[55px] min-w-[55px] h-auto block mx-auto"
                               alt={item.title}
                             />
                           </td>
-                          <td>
+                          <td className="max-md:flex items-center justify-between">
+                            <span className="text-sndry-500 lg:hidden">
+                              Product:
+                            </span>
                             <Link to="/books" className="text-sndry">
                               <div
                                 dangerouslySetInnerHTML={{ __html: item.title }}
                               />
                             </Link>
                           </td>
-                          <td>
+                          <td className="max-md:flex items-center justify-between">
+                            <span className="text-sndry-500 lg:hidden">
+                              Price:
+                            </span>
                             <span>
                               <bdi>
                                 <span>$</span>
@@ -192,7 +201,10 @@ const Cart = () => {
                               </bdi>
                             </span>
                           </td>
-                          <td>
+                          <td className="max-md:flex items-center justify-between ">
+                            <span className="text-sndry-500 lg:hidden">
+                              Quantity:
+                            </span>
                             <div className="flex items-stretch justify-center gap-2 rounded-4xl border border-[#D1D1D1]">
                               <button
                                 type="button"
@@ -222,7 +234,10 @@ const Cart = () => {
                               </button>
                             </div>
                           </td>
-                          <td className="border-r">
+                          <td className="max-md:flex items-center justify-between border-b lg:border-r">
+                            <span className="text-sndry-500 lg:hidden">
+                              Subtotal:
+                            </span>
                             <span>
                               <bdi>
                                 <span>$</span>
@@ -234,9 +249,9 @@ const Cart = () => {
                       ))}
                       <tr>
                         <td className="pt-10" colSpan={6}>
-                          <div className="flex w-full gap-2 items-center justify-end">
+                          <div className="flex flex-col lg:flex-row w-full gap-5 lg:gap-2 items-center justify-end">
                             <form
-                              className="cntform2 grow relative"
+                              className="cntform2 grow relative max-lg:w-full"
                               onSubmit={onApplyCoupon}
                             >
                               <div className="flex items-center justify-end relative group">
@@ -285,7 +300,7 @@ const Cart = () => {
                             </form>
                             <Button
                               btn2
-                              className="text-xs py-3.5 disabled:bg-gray-200 disabled:border-gray-200 disabled:text-gray-400 disabled:after:bg-gray-400"
+                              className="max-lg:text-center max-lg:w-full max-lg:inline-flex max-lg:justify-center text-xs py-3.5 disabled:bg-gray-200 disabled:border-gray-200 disabled:text-gray-400 disabled:after:bg-gray-400"
                               disabled={!hasChanges}
                               onClick={handleUpdateCart}
                             >
@@ -294,7 +309,7 @@ const Cart = () => {
                             <Button
                               onClick={() => setShowConfirm(true)}
                               aria-label="Empty cart"
-                              className="flex gap-2 px-4 py-3.5 text-xs bg-red-500 border-red-500 text-white hover:bg-red-700 hover:border-red-700"
+                              className="max-lg:text-center max-lg:w-full max-lg:inline-flex max-lg:justify-center flex gap-2 px-4 py-3.5 text-xs bg-red-500 border-red-500 text-white hover:bg-red-700 hover:border-red-700"
                             >
                               <IoIosTrash className="text-base" />
                               <span>Empty Cart</span>
@@ -313,7 +328,7 @@ const Cart = () => {
                       </h4>
                       <table className="w-full text-sndry" cellSpacing={0}>
                         <tbody>
-                          <tr className="*:py-1.5">
+                          <tr className="*:py-1.5 max-lg:*:pb-4">
                             <td>Subtotal</td>
                             <td className="text-right">
                               ${subtotal.toFixed(2)}
@@ -351,7 +366,7 @@ const Cart = () => {
                               </td>
                             </tr>
                           )}
-                          <tr className="*:py-1.5 text-primary font-semibold">
+                          <tr className="*:py-1.5 max-lg:*:pt-4 text-primary font-semibold">
                             <td>Total</td>
                             <td className="text-right">${total.toFixed(2)}</td>
                           </tr>

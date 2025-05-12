@@ -33,7 +33,9 @@ const SecHeader = ({
       )}
       <h2 className={textColor}>{title}</h2>
       {description && (
-        <p className={`m-0 ${dark ? "text-white" : ""}`}>{description}</p>
+        <p className={`m-0 text-sm ${dark ? "text-white" : ""}`}>
+          {description}
+        </p>
       )}
     </motion.div>
   );

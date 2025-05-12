@@ -10,7 +10,7 @@ const OrderSummary = () => {
   const total = subtotal - discountAmount;
 
   return (
-    <div className="border border-[#D1D1D1] p-[30px]">
+    <div className="border border-[#D1D1D1] p-5 lg:p-[30px]">
       <h3 className="mb-8">Your Order Summary</h3>
       <table className="border-separate border-spacing-0 w-full">
         <thead>

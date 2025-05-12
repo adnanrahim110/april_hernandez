@@ -27,16 +27,16 @@ const Categories = () => {
       </Helmet>
       <Hero hero2 title={`Category: ${humanize(category)}`} />
       <section className="mb-[150px]">
-        <div className="flex items-stretch justify-between grow shrink basis-auto flex-row gap-[50px] w-full mx-auto h-full">
-          <div className="flex flex-col shrink relative md:w-[70%]">
+        <div className="flex flex-col items-stretch justify-between grow shrink basis-auto lg:flex-row gap-[50px] w-full mx-auto h-full">
+          <div className="flex flex-col shrink relative w-full md:w-[70%]">
             <div className="grid relative grid-cols-1 gap-y-[60px] gap-x-[30px]">
               {filteredPosts.map((post, idx) => (
                 <article
                   key={idx}
                   className="flex flex-nowrap items-stretch justify-stretch relative w-full"
                 >
-                  <div className="flex gap-[50px] mx-auto w-full flex-row shrink">
-                    <div className="md:w-[36%] flex flex-col pb-[300px] relative">
+                  <div className="flex gap-[50px] mx-auto w-full flex-col lg:flex-row shrink">
+                    <div className="w-full md:w-[36%] flex flex-col pb-[300px] relative">
                       <div className="absolute h-full left-px -top-px overflow-hidden z-[1]">
                         <img
                           src={post.img}
@@ -45,7 +45,7 @@ const Categories = () => {
                         />
                       </div>
                     </div>
-                    <div className="md:w-[64%] flex justify-center rounded-[0_10px_10px_0] flex-col shrink gap-5 text-left">
+                    <div className="w-full md:w-[64%] flex justify-center rounded-[0_10px_10px_0] flex-col shrink gap-5 text-left">
                       <div>
                         <span className="text-primary-500 uppercase text-[13px] tracking-[1px]">
                           {post.categories}
@@ -78,7 +78,7 @@ const Categories = () => {
               ))}
             </div>
           </div>
-          <div className="md:w-[27%] flex justify-center items-start">
+          <div className="w-full md:w-[27%] flex justify-center items-start">
             <div className="flex flex-col gap-5 border border-[#D1D1D1] rounded-[20px] p-[30px] w-full">
               <h5 className="text-primary-950 text-center">Featured Posts</h5>
               <div>
