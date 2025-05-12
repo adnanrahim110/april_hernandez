@@ -8,9 +8,9 @@ const Card = ({ post, ...props }) => {
     .replace(/[^\w-]/g, "");
 
   return (
-    <div className="flex flex-col bg-white hover:shadow-lg transition-all duration-300 ease-in-out cursor-pointer shrink rounded-[20px] overflow-hidden">
-      <div className="flex flex-col shrink relative">
-        <div>
+    <div className="flex flex-col bg-white hover:shadow-lg transition-all duration-300 ease-in-out cursor-pointer shrink rounded-[20px] overflow-hidden h-[470px]">
+      <div className="flex flex-col self-stretch grow relative">
+        <div className="h-full">
           <Link to={post.link} className="w-full h-full flex relative">
             <img src={post.img} className="h-full" alt={post.title} />
           </Link>

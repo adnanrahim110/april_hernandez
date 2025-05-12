@@ -1,5 +1,5 @@
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa6";
-import { blogs_1, blogs_2, blogs_3, blogs_4, blogs_5, blogs_6, blogs_7, blogs_8, blogs_9, book1, book2, home_1_13, home_1_14, reviews_m1, reviews_m2, reviews_m3, reviews_w1, reviews_w2, reviews_w3, reviews_w4 } from "../assets";
+import { blogs_1, blogs_2, blogs_3, blogs_4, blogs_5, blogs_6, blogs_7, book1, book2, home_1_13, home_1_14, reviews_m1, reviews_m2, reviews_m3, reviews_w1, reviews_w2, reviews_w3, reviews_w4 } from "../assets";
 
 export const navigation = [
   {
