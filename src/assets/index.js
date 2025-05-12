@@ -18,7 +18,6 @@ export { default as blogs_8 } from './images/blogs/8.webp';
 export { default as blogs_9 } from './images/blogs/9.webp';
 export { default as book1 } from './images/book1.png';
 export { default as book2 } from './images/book2.jpeg';
-export { default as fav } from './images/fav.png';
 export { default as home_1_1 } from './images/home-1-1.webp';
 export { default as home_1_10 } from './images/home-1-10.webp';
 export { default as home_1_13 } from './images/home-1-13.webp';

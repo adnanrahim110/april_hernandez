@@ -57,7 +57,12 @@ const Cart = () => {
     const code = couponCode.trim().toUpperCase();
 
     if (!code) {
-      setCouponError("Please enter the coupon code to apply. *");
+      setCouponError(
+        <span className="text-base text-red-500">
+          Please enter the coupon code to apply. *
+        </span>
+      );
+
       return;
     }
 
@@ -72,7 +77,11 @@ const Cart = () => {
 
     const found = coupons[code];
     if (!found) {
-      setCouponError("Entered coupon code is not valid.");
+      setCouponError(
+        <span className="text-base text-red-500">
+          Entered coupon code is not valid.
+        </span>
+      );
       return;
     }
 
@@ -88,8 +97,8 @@ const Cart = () => {
     applyCoupon(code, disc);
 
     toast.success(
-      <span>
-        Coupon <strong className="text-primary text-base">{code}</strong>{" "}
+      <span className="text-base">
+        Coupon <strong className="text-primary text-base">{code}</strong>
         applied
       </span>
     );

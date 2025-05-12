@@ -99,7 +99,7 @@ const Header = ({ setIsSidebar }) => {
             >
               <span className="text-4xl text-primary relative">
                 <span
-                  className={`absolute text-[10px] font-bold -right-2 border-2 border-white -top-2 bg-primary rounded-full w-[26px] h-[26px] inline-flex items-center justify-center text-center text-white transition-all duration-300 ease-linear ${
+                  className={`absolute text-[10px] leading-none font-bold -right-2 border-2 border-white -top-2 bg-primary rounded-full w-[26px] h-[26px] inline-flex items-center justify-center text-center text-white transition-all duration-300 ease-linear ${
                     location.pathname === "/cart"
                       ? "-translate-y-1 translate-x-1"
                       : "group-hover:-translate-y-1 group-hover:translate-x-1"
