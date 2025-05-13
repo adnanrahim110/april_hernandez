@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { box1 } from "../assets";
+import { banners_about_bg_1, banners_home_bg, box1, card_mu } from "../assets";
 import specialBackImg from "../assets/cards/54.png";
 import backFaceImg from "../assets/cards/card_deck/1.png";
+import { fadeInLeft } from "../utils/animations";
 
 const cardModules = import.meta.glob(
   "../assets/cards/card_deck/*.{png,jpg,jpeg,svg}",
@@ -16,7 +17,7 @@ function Card({ src, index }) {
 
   return (
     <motion.div
-      className="group perspective-[1000px] w-full h-96 relative"
+      className="group perspective-[1000px] w-full h-[520px] lg:h-96 relative"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1, type: "spring", stiffness: 80 }}
@@ -57,21 +58,56 @@ function Card({ src, index }) {
 export default function CardDeckPage() {
   return (
     <>
-      <section className="px-0 lg:px-[30px] relative flex flex-row pt-24 w-full mb-10">
-        <div className="flex flex-col rounded-[20px] overflow-hidden max-h-[680px]">
-          <img
-            src={box1}
-            alt=""
-            className="h-full w-full object-cover object-center"
-          />
+      <section
+        className={`px-0 lg:px-[30px] relative flex flex-row mb-20 md:mb-[150px] pt-24 w-full`}
+      >
+        <div
+          className={`bg-cover bg-center bg-no-repeat flex flex-nowrap w-full shrink lg:rounded-[20px] relative px-5`}
+          style={{ backgroundImage: `url(${banners_home_bg})` }}
+        >
+          <div
+            className={`flex grow shrink justify-end text-center lg:text-left lg:flex-row flex-col`}
+          >
+            <div className="w-full md:w-7/12 flex rounded-t-[20px] lg:rounded-[20px_0_0_20px] flex-col shrink">
+              <img
+                src={card_mu}
+                className="h-full w-auto object-contain"
+                alt=""
+              />
+            </div>
+            <div
+              className={`w-full md:w-5/12 px-5 lg:px-[60px] pt-[60px] pb-10 lg:py-5 rounded-b-[20px] lg:rounded-[0_20px_20px_0] text-left flex flex-col gap-10 justify-center max-lg:text-center`}
+            >
+              <motion.h1
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeInLeft({ delay: 0.2 })}
+              >
+                Cards
+              </motion.h1>
+              <div>
+                <motion.p
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={fadeInLeft({ delay: 0.4 })}
+                >
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod
+                  recusandae consequatur vel est reiciendis debitis, libero
+                  officia labore eos incidunt.
+                </motion.p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
-      <section className="px-5 lg:px-[30px] mb-20">
-        <div className="min-h-screen bg-gradient-to-b from-sndry-50 via-primary-50 to-ivory-50 py-12 px-6 rounded-[20px]">
+      <section className="px-0 lg:px-[30px] mb-20">
+        <div className="min-h-screen bg-gradient-to-b from-sndry-50 via-primary-50 to-ivory-50 py-12 px-6 lg:rounded-[20px]">
           <h1 className="text-center mb-10 text-3xl font-bold">
             Spiritual Therapy Card Deck
           </h1>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 lg:gap-5">
             {cards.map((src, index) => (
               <Card key={index} src={src} index={index} />
             ))}

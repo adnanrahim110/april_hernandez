@@ -17,6 +17,7 @@ export { default as blogs_7 } from './images/blogs/7.jpg';
 export { default as book1 } from './images/book1.png';
 export { default as book2 } from './images/book2.jpeg';
 export { default as box1 } from './images/box1.png';
+export { default as card_mu } from './images/card_mu.png';
 export { default as home_1_1 } from './images/home-1-1.webp';
 export { default as home_1_10 } from './images/home-1-10.webp';
 export { default as home_1_13 } from './images/home-1-13.webp';

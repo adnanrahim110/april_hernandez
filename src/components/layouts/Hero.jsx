@@ -1,5 +1,5 @@
 import { motion, useScroll, useSpring, useTransform } from "motion/react";
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { banners_home_bg } from "../../assets";
 import { fadeInLeft, fadeInUp } from "../../utils/animations";
 import { Breadcrumbs } from "../ui/Breadcrumbs";
