@@ -1,4 +1,4 @@
-import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa6";
+import { FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa6";
 import { blogs_1, blogs_2, blogs_3, blogs_4, blogs_5, blogs_6, blogs_7, book1, book2, home_1_13, home_1_14, reviews_m1, reviews_m2, reviews_m3, reviews_w1, reviews_w2, reviews_w3, reviews_w4 } from "../assets";
 
 export const navigation = [
@@ -26,19 +26,19 @@ export const navigation = [
 
 export const socials = [
   {
-    name: "Facebook",
-    icon: FaFacebookF,
-    href: "https://www.facebook.com/author",
+    name: "Youtube",
+    icon: FaYoutube,
+    href: "https://www.youtube.com/@AprilPHernandez",
   },
   {
     name: "Instagram",
     icon: FaInstagram,
-    href: "https://www.instagram.com/author",
+    href: "https://www.instagram.com/AprilP.hernandez",
   },
   {
-    name: "Linkedin",
-    icon: FaLinkedinIn,
-    href: "https://www.linkedin.com/author",
+    name: "Tiktok",
+    icon: FaTiktok,
+    href: "https://www.tiktok.com/@aprilp.hernandez",
   },
 ]
 
