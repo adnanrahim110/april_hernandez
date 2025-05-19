@@ -50,10 +50,10 @@ const ImgRounded = ({
         } items-start flex-wrap`}
         style={{ y }}
       >
-        <div>
+        <div className="w-full">
           <img
             src={bgImg}
-            className={`w-full h-full shadow-[0_0_20px_10px_rgba(0,0,0,0.1)] ${
+            className={`w-full h-full max-h-[600px] object-cover shadow-[0_0_20px_10px_rgba(0,0,0,0.1)] ${
               reverse
                 ? "rounded-[20px_20px_20px_100px] lg:rounded-[20px_20px_20px_250px]"
                 : "rounded-[20px_100px_20px_20px] lg:rounded-[20px_250px_20px_20px]"

@@ -1,5 +1,5 @@
 import { FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa6";
-import { blogs_1, blogs_2, blogs_3, blogs_4, blogs_5, blogs_6, blogs_7, book1, book2, home_1_13, home_1_14, reviews_m1, reviews_m2, reviews_m3, reviews_w1, reviews_w2, reviews_w3, reviews_w4 } from "../assets";
+import { blogs_1, blogs_2, blogs_3, blogs_4, blogs_5, blogs_6, blogs_7, book1, book2, home_1_13, home_1_14, reviews_m1, reviews_m2, reviews_m3, reviews_m4, reviews_w1, reviews_w2, reviews_w3 } from "../assets";
 
 export const navigation = [
   {
@@ -73,34 +73,34 @@ export const books = [
 
 export const reviews = [
   {
-    author: "Cynthia on Reiki Healing Session",
+    author: "Sophia Mary — Writer",
     avatar: reviews_w1,
     rating: 5,
-    text: "My Reiki session was incredibly calming and transformative. I felt emotional blocks release and energy shift, leaving me lighter, balanced, and more connected to myself. It brought clarity and peace that stayed with me long after. Highly recommend!"
+    text: "April’s words cracked me open and stitched me back together. Her poetry didn’t just speak to my heart it “became” my heart.Every page felt like a sacred echo of my own healing journey.If you’ve ever loved, lost, or longed for rebirth, this book is your compass."
   },
   {
-    author: "Sophia on Chakra Balancing Session",
+    author: "Lura Jenner — Yoga Teacher",
     avatar: reviews_w2,
     rating: 5,
-    text: "The chakra balancing session was an incredible experience. I could feel the energy shifts as blockages were released, leaving me feeling lighter and more aligned. By the end, I had a deep sense of calm, balance, and clarity. It was truly transformative and left me feeling renewed."
+    text: " brought this book to a meditation retreat, and it became my guide. Storytelling mirrors the quiet power of sitting with yourself unflinching, tender, and utterly transformative.By the last page, I felt like I’d both mourned and celebrated every love I’ve ever known."
   },
   {
-    author: "Harry on Reiki Healing Workshop",
+    author: "Jack Mile — Therapist",
     avatar: reviews_m1,
     rating: 5,
-    text: "The Reiki healing workshop was an amazing experience. The hands-on practice and detailed guidance helped me feel confident in connecting with Reiki energy. It was inspiring, empowering, and left me feeling deeply connected to myself and others. Highly recommend!"
+    text: "Raw, real, and radiant. My Heart Expansions was the sound bath my spirit needed. Verses vibrated through me, loosening old grief and leaving clarity in its wake.I finished it in one sitting—then immediately reread it, lighter every time."
   },
   {
-    author: "Mike on Life Coaching Session",
+    author: "Nike Steve — Student",
     avatar: reviews_m2,
     rating: 5,
-    text: "My life coaching session was eye-opening and empowering. I gained clarity on my goals and identified blocks that were holding me back. The guidance was compassionate yet transformative, leaving me feeling motivated and confident to take the next steps in my journey. Truly a life-changing experience!"
+    text: "April doesn’t just write about healing; she “conducts” it. Her words are a retreat between covers.I’d finish a poem and catch myself breathing deeper, shoulders softer.This isn’t a book it’s medicine for the love- wounded.Highly recommended!!"
   },
   {
-    author: "Mason on Sound Healing Session",
+    author: "Marcus Ron",
     avatar: reviews_m3,
     rating: 5,
-    text: "The sound healing session was deeply relaxing and transformative. The vibrations from the instruments seemed to wash over me, releasing tension and bringing a profound sense of peace. I left feeling lighter, balanced, and reconnected to myself. It was a truly magical experience! 🤩"
+    text: "I’ve done therapy for years, but Healing and Feeling reached places talk therapy couldn’t. The inner child meditations had me in tears(the good, releasing kind).By the end, I felt lighter, like I’d finally put down baggage I didn’t realize I was carrying."
   },
   {
     img: home_1_14,
@@ -113,16 +113,16 @@ export const reviews = [
     video: true
   },
   {
-    author: "Mary on Meditation Retreat",
+    author: "Stepheny Kevin — Energy worker",
     avatar: reviews_w3,
     rating: 5,
-    text: "The meditation retreat was incredible. The peaceful setting and guided practices brought deep clarity and calm. I left feeling renewed, centered, and inspired. Highly recommend it for true relaxation and self-discovery."
+    text: "As someone who thinks their way through everything, this book brought me back into my body and soul.The chakra exercises melted away tension I’d held for decades.I’m on my third round of journaling through it!"
   },
   {
-    author: "Amanda on Reiki Healing Course",
-    avatar: reviews_w4,
+    author: "Tyler — Healing coach",
+    avatar: reviews_m4,
     rating: 5,
-    text: "The Reiki healing course was truly transformative. The teaching was clear, supportive, and hands-on, helping me deeply connect with Reiki energy. I left feeling empowered, confident in my skills, and inspired to continue this healing journey. Highly recommend to anyone interested in Reiki! 🤩"
+    text: "Thank you! April’s words feel like a wise friend handing you a flashlight for your darkest corners.The forgiveness practices freed me from resentment I’d clung to for years.My relationships with myself and others—have transformed because of this work."
   }
 ];
 

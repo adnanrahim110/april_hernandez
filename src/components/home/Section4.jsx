@@ -1,6 +1,6 @@
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
-import React, { useRef } from "react";
-import { banners_home_3, home_1_10, home_1_9 } from "../../assets";
+import { useRef } from "react";
+import { author_10, author_6, banners_home_3 } from "../../assets";
 import ImgRounded from "../ui/ImgRounded";
 
 const Section4 = () => {
@@ -97,7 +97,7 @@ const Section4 = () => {
           reverse={true}
           textPrimary
           titleClass="text-4xl font-medium"
-          bgImg={home_1_9}
+          bgImg={author_10}
           subtitle="My Heart Expansions"
           title="A poetic journey through love, heartbreak, and the sacred return to self."
           content={`My Heart Expansions is a deeply personal collection of poetry and reflections that explores the raw, beautiful process of falling apart and finding your way back to wholeness. From the tenderness of love to the ache of heartbreak, and the quiet strength of rediscovering self-worth, April writes with a vulnerability that resonates with anyone who has ever lost themselves in love—and found their way back home. \n These words are more than poems; they are gentle companions for the soul. Each piece reminds us that even in our most broken moments, we remain whole—and forever worthy of love.`}
@@ -107,7 +107,7 @@ const Section4 = () => {
         <ImgRounded
           w="md:w-1/2"
           imgw="md:w-1/2"
-          bgImg={home_1_10}
+          bgImg={author_6}
           titleClass="text-4xl font-medium"
           subtitle="Healing and Feeling"
           title="A spiritual workbook to help you feel, process, and rise into your most healed, whole self."

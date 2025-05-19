@@ -61,7 +61,11 @@ const Reviews = ({ dark = false, title, text }) => {
                       } p-10 rounded-[20px]`}
                     >
                       <div>
-                        <div className="relative flex items-center">
+                        <div
+                          className={`relative flex items-center ${
+                            colIdx === 1 ? "lg:min-h-[450px]" : ""
+                          }`}
+                        >
                           <div className="flex flex-col shrink items-center">
                             <div className="text-center">
                               <div className="mb-[30px]">
@@ -92,7 +96,25 @@ const Reviews = ({ dark = false, title, text }) => {
                               </div>
                               <div className="flex items-center">
                                 <div className="text-left text-[15px]">
-                                  {review.author}
+                                  {(() => {
+                                    const text = review.author;
+                                    const dash = "—";
+                                    const i = text.indexOf(dash);
+                                    if (i !== -1) {
+                                      return (
+                                        <>
+                                          <span className="font-bold font-heading text-sndry-700">
+                                            {text.substring(0, i)}
+                                          </span>
+                                          <span className="text-gray-400">
+                                            {dash}
+                                          </span>
+                                          {text.substring(i + 1)}
+                                        </>
+                                      );
+                                    }
+                                    return text;
+                                  })()}
                                 </div>
                               </div>
                             </div>

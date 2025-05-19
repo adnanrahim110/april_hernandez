@@ -9,7 +9,7 @@ import {
 import { Link, useParams } from "react-router-dom";
 import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { author } from "../assets";
+import { author_1_1 } from "../assets";
 import Button from "../components/ui/Button";
 import Card from "../components/ui/Card";
 import { posts } from "../constant";
@@ -101,7 +101,7 @@ const Blog = () => {
           <div className="flex text-sm flex-wrap items-center justify-center text-center whitespace-pre-wrap">
             <div className="inline-flex gap-3 items-center justify-center text-center">
               <img
-                src={author}
+                src={author_1_1}
                 className="w-8 h-8 rounded-full border-2"
                 alt=""
               />
@@ -123,15 +123,19 @@ const Blog = () => {
             <div className="sticky top-9 flex flex-col gap-2.5">
               <div className="bg-[#F5F3EF] rounded-[20px] p-5 transition-all duration-300 ease-in-out">
                 <Link to="/author" className="mb-5 block w-full">
-                  <img src={author} className="rounded-[20px] w-full" alt="" />
+                  <img
+                    src={author_1_1}
+                    className="rounded-[20px] w-full"
+                    alt=""
+                  />
                 </Link>
                 <div className="text-center">
                   <h5 className="mb-5 text-sndry text-[22px] leading-[1.25em] tracking-[-1px]">
                     April Hernandez
                   </h5>
                   <p className="mb-5 text-base leading-[1.5em]">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Libero pariatur provident aspernatur iure alias illo.
+                    Come discover how blending therapy with spiritual insight
+                    can transform your life from the inside out.
                   </p>
                   <Button btn2 href="/author" className="inline-flex">
                     Open profile

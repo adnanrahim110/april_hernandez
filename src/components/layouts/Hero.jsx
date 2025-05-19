@@ -1,5 +1,5 @@
 import { motion, useScroll, useSpring, useTransform } from "motion/react";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { banners_home_bg } from "../../assets";
 import { fadeInLeft, fadeInUp } from "../../utils/animations";
 import { Breadcrumbs } from "../ui/Breadcrumbs";
@@ -17,13 +17,25 @@ const Hero = ({
   hero2 = false,
 }) => {
   const sectionRef = useRef(null);
+
+  const [isDesktop, setIsDesktop] = useState(
+    () => window.matchMedia("(min-width: 1024px)").matches
+  );
+
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 1024px)");
+    const handleChange = () => setIsDesktop(mq.matches);
+    mq.addEventListener("change", handleChange);
+    return () => mq.removeEventListener("change", handleChange);
+  }, []);
+
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "end start"],
   });
-  const rawY = useTransform(scrollYProgress, [0, 1], [0, 0]);
-  const y = useSpring(rawY, {
-    stiffness: 100,
+  const rawY = useTransform(scrollYProgress, [0, 1], [-100, 100]);
+  const springY = useSpring(rawY, {
+    stiffness: 80,
     damping: 20,
   });
 
@@ -112,9 +124,9 @@ const Hero = ({
           </div>
           {!imgLeft && imgRight && (
             <div className="w-full md:w-[46%] px-[5%] lg:px-0 flex flex-col grow-0 shrink relative">
-              <motion.div style={{ y }}>
+              <motion.div style={{ y: isDesktop ? springY : 0 }}>
                 <div
-                  className="lg:-mb-[200px] bg-cover bg-center bg-no-repeat relative shadow-[0_0_20px_10px_rgba(0,0,0,0.1)] flex min-h-[360px] lg:min-h-[800px] rounded-[600px_600px_20px_20px] flex-col grow-0 shrink"
+                  className="lg:-mb-[100px] bg-cover bg-center bg-no-repeat relative shadow-[0_0_20px_10px_rgba(0,0,0,0.1)] flex min-h-[360px] lg:min-h-[800px] rounded-[600px_600px_20px_20px] flex-col grow-0 shrink"
                   style={{ backgroundImage: `url(${imgRight})` }}
                 ></div>
               </motion.div>

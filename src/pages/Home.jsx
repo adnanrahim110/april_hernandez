@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet-async";
-import { home_1_1 } from "../assets";
+import { author_5 } from "../assets";
 import Section1 from "../components/home/Section1";
 import Section2 from "../components/home/Section2";
 import Section3 from "../components/home/Section3";
@@ -20,7 +20,7 @@ const Home = () => {
         text="Reconnect with your truest self. Part guided journey, part soul expression, it walks with you through love, loss, and the powerful act of choosing yourself again and again."
         btn="buy now on amazon"
         btnLink="/"
-        imgRight={home_1_1}
+        imgRight={author_5}
       />
       <Section1 />
       <Section2 />

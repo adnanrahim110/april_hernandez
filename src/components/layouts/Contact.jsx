@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { home_1_15 } from "../../assets";
+import { author_9 } from "../../assets";
 import Button from "../ui/Button";
 
 const Contact = ({ form2 = false }) => {
@@ -99,7 +99,7 @@ const Contact = ({ form2 = false }) => {
         {!form2 && (
           <div
             className="flex bg-cover bg-center bg-no-repeat max-md:min-h-[340px] max-[1180px]:min-h-[540px] md:w-[70%] flex-col p-[30px] relative gap-10"
-            style={{ backgroundImage: `url(${home_1_15})` }}
+            style={{ backgroundImage: `url(${author_9})` }}
           />
         )}
         <div

@@ -1,6 +1,5 @@
 import { motion } from "motion/react";
-import React from "react";
-import { banners_home_2, home_1_2 } from "../../assets";
+import { author_8, banners_home_2 } from "../../assets";
 import { fadeInUp } from "../../utils/animations";
 import ImgRounded from "../ui/ImgRounded";
 
@@ -13,7 +12,7 @@ const Section2 = () => {
       <div className="flex flex-wrap basis-auto grow shrink items-center justify-start pb-[150px]">
         <ImgRounded
           bar="Heal Deeply, Shine Brightly, Live Freely."
-          bgImg={home_1_2}
+          bgImg={author_8}
           title="Soulful Healing Journey"
           content={`I’m April — a spiritual therapist, Reiki practitioner, healer, and medium. I blend therapy with energy healing to help you reconnect with your truest self. Through life’s messiness, I found that true healing requires both the mind and the spirit. \n I walk this path with you, honoring every part of your journey with compassion and soul.`}
           btntext="Author’s Journey"

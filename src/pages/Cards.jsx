@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { banners_about_bg_1, banners_home_bg, box1, card_mu } from "../assets";
+import { banners_home_bg, card_mu } from "../assets";
 import specialBackImg from "../assets/cards/54.png";
 import backFaceImg from "../assets/cards/card_deck/1.png";
 import { fadeInLeft } from "../utils/animations";
@@ -84,7 +84,7 @@ export default function CardDeckPage() {
                 viewport={{ once: true }}
                 variants={fadeInLeft({ delay: 0.2 })}
               >
-                Cards
+                Soulful Card
               </motion.h1>
               <div>
                 <motion.p
@@ -93,9 +93,8 @@ export default function CardDeckPage() {
                   viewport={{ once: true }}
                   variants={fadeInLeft({ delay: 0.4 })}
                 >
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod
-                  recusandae consequatur vel est reiciendis debitis, libero
-                  officia labore eos incidunt.
+                  Empowering words to guide your heart, uplift your spirit, and
+                  awaken inner healing.
                 </motion.p>
               </div>
             </div>
